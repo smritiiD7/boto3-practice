@@ -46,4 +46,13 @@ s3_resource.Bucket(bucket_src).delete()
 print(f"SRC_BUCKET_DELETED: {bucket_src}")
 
 
+# #Emptying destination bucket before deleting
+# bucket = s3_resource.Bucket(bucket_des)
+# bucket.objects.all().delete()
+
+#Cleanup - Deleting destination bucket
+# s3_resource.Bucket(bucket_des).delete()
+# print(f"DESTINATION_BUCKET_DELETED: {bucket_des}")
+
+
 
