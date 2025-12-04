@@ -41,7 +41,9 @@ print(f"FILE_COPIED_TO_DESTINATION_BUCKET: {bucket_des}")
 s3_resource.Object(bucket_src, bck_src_path).delete()
 print(f"FILE_DELETED_FROM_SOURCE_BUCKET: {bucket_src}")
 
-
+#Cleanup - Deleting the buckets
+s3_resource.Bucket(bucket_src).delete()
+print(f"SRC_BUCKET_DELETED: {bucket_src}")
 
 
 
