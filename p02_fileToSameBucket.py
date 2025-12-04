@@ -6,7 +6,7 @@ s3_resource = boto3.resource('s3', region_name='us-east-1')
 current_time_meta_data = return_date_time()
 
 #s3 bucket name
-bucket_name = f"inter-bucket-transfer-tsft"+current_time_meta_data
+bucket_name = f"intra-bucket-transfer-tsft"+current_time_meta_data
 
 #CREATING BUCKET
 if bucket_name not in s3_resource.buckets.all():
@@ -17,7 +17,7 @@ else:
     print(f"{bucket_name} bucket already exists")
 
 file_local_path = "resources/file_transfer/test.txt"
-bck_src_path = "src/test.txt"  
+bck_src_path = "src/test.txt"
 
 #uploading file from local to bucket
 s3_resource.Bucket(bucket_name).upload_file(Filename=file_local_path, Key=bck_src_path)
