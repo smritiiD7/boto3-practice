@@ -1,0 +1,13 @@
+import pyautogui
+import time
+moved = False
+# pyautogui.moveTo(100,100,duration = 1)
+while True:
+    time.sleep(10)
+    if moved :
+        pyautogui.moveRel(0,50,duration = 1)
+        moved = False
+    else:
+        pyautogui.moveRel(0,-50,duration = 1)
+        moved = True
+    pyautogui.click(pyautogui.position())
